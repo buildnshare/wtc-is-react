@@ -1,135 +1,136 @@
+/* ==== Global Styles ==== */
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background-color: #f0f2f5;
+    color: #333;
+    line-height: 1.6;
 }
 
+/* ==== Header ==== */
 header {
-    background-color: #ffffff;
+    background-color: #fff;
     padding: 1rem 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid #e0e0e0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
 header h1 {
-    font-size: 1.5rem;
-    color: #333;
     margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #222;
 }
 
 header nav ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
     display: flex;
-    gap: 1rem;
+    gap: 1.25rem;
+    margin: 0;
+    padding: 0;
 }
 
-header nav li a {
+header nav a {
     text-decoration: none;
     color: #555;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
-header nav li a:hover {
+header nav a:hover {
     color: #007bff;
 }
 
-header > div:nth-of-type(1) {
-    display: flex;
-    align-items: center;
-}
-
-header > div:nth-of-type(1) a {
+/* Left Icon Button */
+header > div:first-of-type a {
     text-decoration: none;
-    color: #fff;
-    background-color: #007bff;
-    border-radius: 50%;
+    color: black;
     width: 2rem;
-    height: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
+    padding: 10px;
+    font-size: 32px;
+    text-align: center;
     transition: background-color 0.3s ease;
 }
 
-header > div:nth-of-type(1) a:hover {
-    background-color: #0056b3;
-}
-
-header > div:nth-of-type(2) img {
+/* Profile Image */
+header > div:last-of-type img {
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 50%;
     border: 2px solid #ddd;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
 }
 
+/* ==== Card Component ==== */
 .card {
-    background-color: #ffffff;
+    background-color: #fff;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     width: 300px;
     text-align: center;
     position: relative;
-    /* Added for positioning the button */
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
 }
 
 .card .cover {
     width: 100%;
-    height: auto;
+    height: 300px;
     overflow: hidden;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
 }
 
 .card .cover img {
     width: 100%;
     height: 100%;
+    object-fit: fill;
     display: block;
-    object-fit: cover;
 }
 
 .card p {
-    margin: 15px;
-    color: #666;
-    font-size: 0.9em;
+    margin: 1rem;
+    color: #555;
+    font-size: 0.95rem;
     font-style: italic;
 }
 
+/* Card Action Button */
 .card button {
-    top: 10px;
-    right: 10px;
-    background-color: rgba(255, 255, 255, 0.8);
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background-color: rgba(255, 255, 255, 0.85);
     border: none;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    padding: 0;
+    transition: background-color 0.25s ease, transform 0.15s ease;
 }
 
 .card button:hover {
-    background-color: rgba(255, 255, 255, 1);
+    background-color: #fff;
+    transform: scale(1.05);
 }
 
 .card button img {
     width: 20px;
     height: 20px;
+}
+
+.wrap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  gap: 20px; /* spacing between grid items */
+  padding: 4rem;
 }
