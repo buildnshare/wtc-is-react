@@ -1,0 +1,73 @@
+/* Reset body for full-width header */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* Header container */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;      /* stay on top */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 70px;
+  padding: 0 24px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  z-index: 100;
+  box-sizing: border-box;
+}
+
+/* Logo / title */
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  margin: 0;
+}
+
+/* Right section */
+.right-wrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;  /* space between upload button and avatar */
+}
+
+/* Upload button */
+.upload {
+  width: 36px;
+  height: 36px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  border: none;
+  border-radius: 25%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.2s ease, transform 0.2s ease;
+  text-align: center;
+}
+
+/* Avatar */
+.avatar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.avatar img:hover {
+  transform: scale(1.1);
+}
+
+/* Optional: add padding to content below header */
+.wrap {
+  padding-top: 80px; /* same as header height + spacing */
+}
