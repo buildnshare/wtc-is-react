@@ -1,18 +1,14 @@
+import { Route, Routes } from 'react-router';
 import './App.css'
-import Header from './components/Header'
-import Card from './components/MemeCard';
+import HomePage from './pages/HomePage';
 
 function App() {
 
   return (
     <>
-      <Header />
-      <div className='wrap'>
-        <Card />
-        <Card />
-        <Card />
-      </div>
-
+       <Routes>
+          <Route  path='/' element={<HomePage />} />
+       </Routes>
     </>
   )
 }
