@@ -1,20 +1,18 @@
 
 import './App.css'
 import './styles/MemeCard.css';
-import Card from './components/MemeCard';
-import Header from './components/Header';
+import HomePage from './pages/HomePage';
+import { Route, Routes } from 'react-router';
+import FormPage from './pages/FormPage';
 
 function App() {
 
   return (
     <>
-      <Header />
-      <div className="wrap">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-      </div>
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+        <Route path='/form' element={<FormPage />} />
+      </Routes>
     </>
   )
 }

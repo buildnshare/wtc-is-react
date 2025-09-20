@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import '../styles/Header.css'
 
 function Header() {
@@ -7,7 +8,9 @@ function Header() {
 
       <div className="right-wrap">
         <button className="upload">
-          <span>+</span>
+          <span>
+            <Link to='/form'>+</Link>
+          </span>
         </button>
         <div className="avatar">
           <img src="https://avatar.iran.liara.run/public/50" alt="User" />
