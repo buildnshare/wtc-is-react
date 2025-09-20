@@ -1,0 +1,82 @@
+/* Card Container */
+
+.wrap {
+  display: grid;                /* enable grid */
+  grid-template-columns: 1fr 1fr 1fr;  /* 3 equal columns */
+  grid-template-rows: auto;     /* rows adjust automatically */
+  gap: 16px;                    /* space between items */
+  padding: 32px;
+}
+
+.card {
+  width: 320px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  background: #fff;
+  margin: 16px auto;
+  font-family: Arial, sans-serif;
+  transition: transform 0.2s ease;
+}
+.card:hover {
+  transform: scale(1.02);
+}
+
+/* Meme Image */
+.meme-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Content Section */
+.meme-content {
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.meme-content p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: black;
+}
+.like-btn {
+  background: #ff3b3b;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.like-btn:hover {
+  background: #e03232;
+}
+
+/* Footer (User + Follow) */
+.meme-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border-top: 1px solid #eee;
+}
+.user-info img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+.follow-btn {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.follow-btn:hover {
+  background: #0069d9;
+}
