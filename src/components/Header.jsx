@@ -1,7 +1,8 @@
 import { Link } from 'react-router';
 import '../styles/Header.css'
 
-function Header() {
+function Header() { 
+  
   return (
     <header className="header">
       <h1 className="logo">Meme Gallery</h1>

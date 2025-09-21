@@ -6,7 +6,6 @@ import { Route, Routes } from 'react-router';
 import FormPage from './pages/FormPage';
 
 function App() {
-
   return (
     <>
       <Routes>

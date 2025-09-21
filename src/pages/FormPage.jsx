@@ -1,17 +1,21 @@
 import { useState } from 'react';
 import '../styles/FormPage.css'
+import { useNavigate } from 'react-router-dom';
 
-const addMeme = (meme) => {
-    let memes = JSON.parse(localStorage.getItem('memes'));
-    if (!memes) memes = localStorage.setItem('memes', JSON.stringify([meme]));
-
-    memes.push(meme);
-
-    localStorage.setItem(memes);
-}
 
 
 function FormPage() {
+    const navigate = useNavigate();
+
+    const addMeme = (meme) => {
+        let memes = JSON.parse(localStorage.getItem('memes'));
+        if (!memes) memes = localStorage.setItem('memes', JSON.stringify([meme]));
+
+        memes.push(meme);
+
+        localStorage.setItem('memes', JSON.stringify(memes));
+        navigate('/');
+    }
     const [link, setLink] = useState('');
     const [caption, setCaption] = useState('');
     const [profile, setProfile] = useState('');
@@ -32,15 +36,15 @@ function FormPage() {
                     <label htmlFor="link">Link</label>
                     <input type="text" name="link" id="link" onChange={(e) => {
                         setLink(e.target.value)
-                    }}/>
+                    }} />
                     <label htmlFor="caption">Caption</label>
                     <input type="text" name="caption" id="caption" onChange={(e) => {
                         setCaption(e.target.value)
-                    }}/>
+                    }} />
                     <label htmlFor="profiler">Profile</label>
                     <input type="text" name="profiler" id="profiler" onChange={(e) => {
                         setProfile(e.target.value);
-                    }}/>
+                    }} />
                     <button type="submit">Submit</button>
                 </form>
             </div>
