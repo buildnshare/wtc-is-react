@@ -14,7 +14,7 @@ function HomePage() {
         <div>
             <Header />
             <div className="wrap">
-                {memes.map((item, index) => (
+                {memes ?? memes.map((item, index) => (
                     <Card key={index} src={item.link} caption={item.caption} user={item.profile} uid={index}/>
                 ))}
             </div>

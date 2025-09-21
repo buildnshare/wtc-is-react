@@ -15,7 +15,7 @@ function LikePage() {
         <div>
             <Header />
             <div className="wrap">
-                {meme.map((item, index) => (
+                {meme ?? meme.map((item, index) => (
                     <Card key={index} src={item.link} uid={index} caption={item.caption} user={item.profile} />
                 ))}
             </div>
