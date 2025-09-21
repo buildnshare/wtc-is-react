@@ -4,6 +4,7 @@ import './styles/MemeCard.css';
 import HomePage from './pages/HomePage';
 import { Route, Routes } from 'react-router';
 import FormPage from './pages/FormPage';
+import LikePage from './pages/LikedPage';
 
 function App() {
   return (
@@ -11,6 +12,8 @@ function App() {
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/form' element={<FormPage />} />
+        <Route path='/liked' element={<LikePage />} />
+
       </Routes>
     </>
   )
