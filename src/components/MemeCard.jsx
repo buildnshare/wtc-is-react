@@ -2,8 +2,21 @@ import { useState } from 'react';
 import '../styles/MemeCard.css'
 
 function Card(prop) { 
+  const [like, setlike] = useState(false);
 
-  const toggleLike = () => {}
+  const toggleLike = () => {
+
+    const newLike = !like;
+    setlike(newLike);
+    
+    let memes = JSON.parse(localStorage.getItem('memes'));
+    const meme = memes[prop.uid];
+    meme.like = newLike;
+
+    memes[prop.uid] = meme;
+    localStorage.setItem('memes', JSON.stringify(memes));
+  }
+
   return (
     <div className="card">
         <div className="meme-image">
@@ -11,7 +24,7 @@ function Card(prop) {
         </div>
         <div className="meme-content">
           <p>{prop.caption}</p>
-          <button className="like-btn">Like</button>
+          <button className="like-btn" onClick={toggleLike}>{like == true ? 'liked': 'like'}</button>
         </div>
         <div className="meme-footer">
           <div className="user-info">
