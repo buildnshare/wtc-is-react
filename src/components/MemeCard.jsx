@@ -1,9 +1,16 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import '../styles/MemeCard.css'
 
 function Card(prop) { 
   const [like, setlike] = useState(false);
 
+  useEffect(() => {
+    let memes = JSON.parse(localStorage.getItem('memes'))
+
+    const likeProperty = memes[prop.uid].like;
+
+    setlike(likeProperty);
+  }, [])
   const toggleLike = () => {
 
     const newLike = !like;

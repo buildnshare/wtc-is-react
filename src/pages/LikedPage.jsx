@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Card from "../components/MemeCard";
+import Header from "../components/Header";
 
 function LikePage() {
     const [meme, setMemes] = useState([]);
@@ -11,10 +12,13 @@ function LikePage() {
     }, [])
 
     return (
-        <div className="wrap">
-            {meme.map((item, index) => (
-                <Card key={index} src={item.link} uid={item.uid} caption={item.caption} user={item.user} />
-            ))}
+        <div>
+            <Header />
+            <div className="wrap">
+                {meme.map((item, index) => (
+                    <Card key={index} src={item.link} uid={index} caption={item.caption} user={item.profile} />
+                ))}
+            </div>
         </div>
     );
 }

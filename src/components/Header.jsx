@@ -5,9 +5,12 @@ function Header() {
   
   return (
     <header className="header">
-      <h1 className="logo">Meme Gallery</h1>
+      <h1 className="logo">
+        <Link to='/'>Meme Gallery</Link>
+      </h1>
 
       <div className="right-wrap">
+        <Link to='liked'>Liked memes</Link>
         <button className="upload">
           <span>
             <Link to='/form'>+</Link>
